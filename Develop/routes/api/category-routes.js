@@ -5,10 +5,9 @@ const { Category, Product } = require('../../models');
 
 router.get('/', async (req, res) => {
   // find all categories
-  // // be sure to include its associated Products
+  // be sure to include its associated Products
   //this query shows id categoryname id product name price stock category id
   // Select * from category join product on product.category_id = category.id;
-  //only returning one product for each category
   try {
     const categoryData = await Category.findAll({
       include: [{ model: Product }],
