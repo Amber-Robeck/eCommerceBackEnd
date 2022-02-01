@@ -37,6 +37,8 @@ Product.init(
     },
     category_id: {
       type: DataTypes.INTEGER,
+      //need this to be able to delete and the foreign id can be empty
+      allowNull: true,
       references: {
         model: 'category',
         key: 'id',
